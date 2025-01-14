@@ -3,7 +3,7 @@
 2. Check all usages of the containing class
 # Introduction and  terminology
 We have a class `Account`, which contains a property `AccountType`
-The account type is Credit or Debit, and we want to add a type `Mortgage`
+The account type is `Credit` or `Debit`, and we want to add a type `Mortgage`
 # 1. Check existing behaviour
 ## Inclusive filters
 When we want to search for **debt** a person has, we now return `Accounts` where `Type` is `Credit`. 
