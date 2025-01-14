@@ -14,7 +14,7 @@ This logic breaks when we add `Mortgage` type, because a mortgage is also a form
 
 To resolve this:
 
-1. Search for all usages of the AccountType enum and see where logic needs to be updated
+1. Search for all usages of the `AccountType` enum and see where logic needs to be updated
 
 ## Exclusive filters
 There's also the option where the query could be setup like this:
@@ -23,7 +23,7 @@ var debt = accounts.Where(acc => acc.AccountType != AccountType.Debit)
 ```
 > Note the != here
 
-1.  Check all usages of the 
+1.  Check all usages of the `Account` class (all classes that use `AccountType`), and see where new logic needs to be implemented
 
 # 2. Introduce new behaviour
 Example: to query the balance of the account, we query all Accounts for a person. However, we only want to see liquid funds, so we should add an introduction of a filter to only return Accounts where Type is `Credit` or `Debit`
