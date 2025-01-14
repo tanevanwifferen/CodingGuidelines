@@ -4,8 +4,8 @@ When you commit a feature to production, we can assume it works locally. However
 # Assumptions
 - I assume there's a production environment, a dev environment and a testing environment
 
-# Write existing processes side by side existing processes
-To make sure a new process produces correct results, it's good practice to code it next to the existing process.  This way you can test independently of the old process, and see results side by side.
+# Write new processes next to existing processes
+When replacing logic, it's good practice to code the new version next to the existing process. This way you can test independently of the old process, and see results side by side.
 
 When converting stored procedures to managed code, start off writing a wrapper around the old API that forwards the call verbatim. Then you can do something like this:
 
@@ -36,5 +36,6 @@ Store the new results in a new database / table, and don't touch the old impleme
 
 If you've re-used existing business logic, there might be side effects that produced unwanted situations. Race conditions, database getters and setters, service calls. 
 
-You should map which externalities are used by the existing logic, and which assumptions are made about these inputs and outputs. Write unit tests verifying the assumptions of the unit tests. Once the new calls are implemented, the assumptions should still be the same.
+You should map which externalities are used by the existing logic, and which assumptions are made about these inputs and outputs. Write unit tests formalising the assumptions of the unit tests. Once the new calls are implemented, the assumptions should still be the same.
+
 > ❗️ When a side effect is produced, like a service call or a database insert, you should also map who uses this service or this table, and map the assumptions that are mad about the service. Are these assumptions invalidated? Then these indirect consumers should also be re-tested.
