@@ -1,4 +1,3 @@
-[_TOC_]
 # Summary
 1. Check all usages of the enum type
 2. Check all usages of the containing class
