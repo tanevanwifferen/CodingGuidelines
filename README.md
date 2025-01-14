@@ -2,6 +2,6 @@
 List of mistakes I've made, and how to prevent them in the future
 
 ## Refactoring
-[[Enums/Add new item to enum]]
+[Add new item to enum](Enums/add_value)
 ### Testing 
-[[Testing/When is something tested enough?]]
+[Testing](Testing/index)

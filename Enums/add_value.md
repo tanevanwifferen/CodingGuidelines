@@ -1,3 +1,4 @@
+# Add value to enumeration
 # Summary
 1. Check all usages of the enum type
 2. Check all usages of the containing class
