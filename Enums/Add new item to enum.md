@@ -38,5 +38,5 @@ var spendableBalance = accounts.Sum(x => x.Balance);
 2. Find where the enum is used, and query all usages of those classes. Where logic needs to be introduced, introduce it.
 
 # TODO
-1. When introducing logic, you can add equality and inequality checks. 
-2. What about libraries? You don't know the ways a consumer uses your code.
+1. When introducing logic, you can add equality and inequality checks. When is `Type == Credit || Type == Debit` better than `Type != Mortgage`
+3. What about libraries? You don't know the ways a consumer uses your code.
