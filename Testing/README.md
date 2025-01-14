@@ -32,7 +32,7 @@ DoRead(Message msg){
 
 Store the new results in a new database / table, and don't touch the old implementation. Only when you've gone a while without notifications can you remove the old call
 
-# Reusing existing logic
+# What if I'm reusing existing logic
 > TODO: Reusing pure methods should be ok?
 
 If you've re-used existing business logic, there might be side effects that produced unwanted situations. Race conditions, database getters and setters, service calls. 
