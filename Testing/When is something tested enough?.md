@@ -28,4 +28,4 @@ Store the new results in a new database / table, and don't touch the old impleme
 If you've re-used existing business logic, it might have had side effects. Race conditions, database getters and setters, service calls. 
 
 You should map which externalities are used by the existing logic, and which assumptions are made about these inputs and outputs. Write unit tests about these assumptions.
-> When a side effect is produced, like a service call or a database insert, you should also map who uses this service or this table, and map the assumptions that are mad about the service. Are these assumptions invalidated? Then these indirect consumers should also be re-tested.
+> ❗️ When a side effect is produced, like a service call or a database insert, you should also map who uses this service or this table, and map the assumptions that are mad about the service. Are these assumptions invalidated? Then these indirect consumers should also be re-tested.
