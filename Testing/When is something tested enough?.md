@@ -10,7 +10,7 @@ To make sure a new process produces correct results, it's good practice to code 
 When converting stored procedures to managed code, start off writing a wrapper around the old API that forwards the call verbatim. Then you can do something like this:
 
 ```C#
-CallThisProcedure(Message msg){
+DoWrite(Message msg){
 	ForwardToOldImplementation(msg);
 	ForwardToNewImplementation(msg);
 
@@ -18,12 +18,21 @@ CallThisProcedure(Message msg){
 		NotifyDevs(msg);
 	}
 }
+
+DoRead(Message msg){
+	var old = ForwardRead(msg);
+	var @new = ForwardRead(msg);
+	if(!deepCompare(old, @new)){
+		NotifyDevs(msg, old, @new);
+	}
+	return old;
+}
 ```
 
-Store the new results in a new database / table, and don't touch the old implementation.
+Store the new results in a new database / table, and don't touch the old implementation. Only when you've gone a while without notifications can you remove the old call
 
 # Reusing existing logic
-> TODO: Reusing methods should be ok?
+> TODO: Reusing pure methods should be ok?
 
 If you've re-used existing business logic, it might have had side effects. Race conditions, database getters and setters, service calls. 
 
