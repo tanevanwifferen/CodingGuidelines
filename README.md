@@ -1,5 +1,5 @@
 # CodingGuidelines
-List of mistakes I've made, and how to prevent them in the future
+List of mistakes I've made, how I've learned from them, and how to prevent them in the future
 
 ## Refactoring
 [Add new item to enum](Enums/Add%20item.md)
