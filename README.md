@@ -5,5 +5,6 @@ I know [https://refactoring.guru] exists, but I'd like to learn this stuff mysel
 
 ## Refactoring
 [Add new item to enum](Enums/Add%20item.md)
+[Consts](Consts/README)
 ### Testing 
 [Testing](Testing/README.md)
